@@ -48,5 +48,5 @@ export const Clock = ({
 };
 
 const zeroPadding = (str: number, end: number): string => {
-  return `${str}`.slice(0, end);
+  return `0${str}`.slice(-1 * end);
 };
