@@ -29,3 +29,6 @@ export const OnlyDate: Story = {
 export const OnlyTime: Story = {
   render: () => <Clock mode='onlyTime' />,
 };
+export const LargeFont: Story = {
+  render: () => <Clock fontSize={40} />,
+}
