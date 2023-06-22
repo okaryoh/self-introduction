@@ -56,7 +56,7 @@ export const Clock = ({
     return timeState;
   })()
   return (
-    <div className="clock"
+    <div
       style={{
         fontSize: `${fontSize}px`
       }}>

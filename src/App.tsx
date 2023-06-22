@@ -6,7 +6,8 @@ import { Clock } from './stories/clock/Clock';
 function App() {
   return (
     <div className="App">
-      <Clock />
+      <Clock fontSize={40} mode='onlyDate' />
+      <Clock fontSize={70} mode='onlyTime' />
     </div>
   );
 }
