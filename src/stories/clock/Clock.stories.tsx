@@ -19,3 +19,16 @@ type Story = StoryObj<typeof Clock>;
 export const Primary: Story = {
   render: () => <Clock />,
 };
+
+export const Both: Story = {
+  render: () => <Clock mode='both' />,
+};
+export const OnlyDate: Story = {
+  render: () => <Clock mode='onlyDate' />,
+};
+export const OnlyTime: Story = {
+  render: () => <Clock mode='onlyTime' />,
+};
+export const LargeFont: Story = {
+  render: () => <Clock fontSize={40} />,
+}

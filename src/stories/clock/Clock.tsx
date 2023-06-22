@@ -2,12 +2,18 @@ import { useEffect, useState } from "react";
 import "../../style.css"
 
 interface ClockProps {
+  /** フォントサイズ (デフォルト12px) */
+  fontSize?: number;
+  /** モード (both: 両方 / onlyDate: 日付のみ / onlyTime: 時間のみ) */
+  mode?: 'both' | 'onlyDate' | 'onlyTime';
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Clock = ({
+  fontSize = 12,
+  mode = "both",
 }: ClockProps) => {
   const [dateState, setDate] = useState<string>("");
   const [timeState, setTime] = useState<string>("");
@@ -40,10 +46,22 @@ export const Clock = ({
     }, 1000)
   }, [])
 
+  const result: string = (() => {
+    if (mode === 'both') {
+      return `${dateState} ${timeState}`
+    }
+    if (mode === 'onlyDate') {
+      return dateState;
+    }
+    return timeState;
+  })()
   return (
-    <div className="clock">
-      {dateState} {timeState}
-    </div>
+    <div
+      style={{
+        fontSize: `${fontSize}px`
+      }}>
+      {result}
+    </div >
   );
 };
 
